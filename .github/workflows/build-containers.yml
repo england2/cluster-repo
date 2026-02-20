@@ -7,12 +7,6 @@ permissions:
 on:
   push:
 
-# ai--done
-# build and push both images to ghcr
-# programmatically tag them with the module name (e.g service2)
-# (in container dir) head -n1 go.mod
-# (or use a more idiomatic method)
-#
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
