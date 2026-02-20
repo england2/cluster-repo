@@ -16,14 +16,18 @@ func main() {
 			return
 		}
 
-		output := strings.TrimSpace(string(body))
-		fmt.Printf("received: %s\n", output)
+		output := string(body)
+		fmt.Printf("received: %s\n", strings.TrimSpace(output))
 
-		if output == "foo" {
+		if strings.TrimSpace(output) == "foo" {
 			fmt.Println("got foo")
 		}
 
+		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 		w.WriteHeader(http.StatusOK)
+		if _, err := w.Write(body); err != nil {
+			log.Printf("failed to write response body: %v", err)
+		}
 	})
 
 	addr := "0.0.0.0:4872"
