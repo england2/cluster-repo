@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "${repo_root}"
+
+mapfile -t modules < <(find ci-cd-test -type f -name go.mod | sort)
+if [ "${#modules[@]}" -eq 0 ]; then
+  echo "pre-commit: no Go modules found; skipping tests."
+  exit 0
+fi
+
+if [ -z "${GOCACHE:-}" ]; then
+  export GOCACHE="${TMPDIR:-/tmp}/gocache"
+fi
+mkdir -p "${GOCACHE}"
+
+for mod in "${modules[@]}"; do
+  module_dir="$(dirname "${mod}")"
+  echo "pre-commit: go test ./... (${module_dir})"
+  go -C "${module_dir}" test ./...
+done
