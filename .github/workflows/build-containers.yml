@@ -1,4 +1,4 @@
-name: CI Manual Testing
+name: Build Containers
 
 permissions:
   contents: read
