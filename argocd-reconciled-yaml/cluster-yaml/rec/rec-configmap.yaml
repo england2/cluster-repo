@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: simple
-  namespace: simple
+  name: rec
+  namespace: rec
 data:
-  hello: 'aa'
-  another: 'bb'
+  hello: '123'
+  another: '456'
