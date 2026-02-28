@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: cluster-config/apps/simple
+    path: argocd-reconciled-yaml/products/simple
     repoURL: git@github.com:england2/cluster-repo.git
     targetRevision: HEAD
   syncPolicy:
