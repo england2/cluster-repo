@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: simple
+  name: cluster-yaml
   namespace: argocd
 spec:
   destination:
@@ -11,6 +11,8 @@ spec:
   project: default
   source:
     path: cluster-config/apps/cluster-yaml
+    directory:
+      recurse: true
     repoURL: git@github.com:england2/cluster-repo.git
     targetRevision: HEAD
   syncPolicy:
