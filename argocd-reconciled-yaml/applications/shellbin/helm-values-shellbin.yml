@@ -5,27 +5,24 @@ global:
   DBSERVICEADDR: db-service.shellbin.svc.cluster.local
   registryUrl: ghcr.io/england2/shellbin
   imagePullSecret: ghcr-secret
-
 webserver:
   replicaCount: 1
   name: webserver
   image:
     repository: ghcr.io/england2/shellbin
     pullPolicy: IfNotPresent
-    tag: webserver-REPLACE_ME
-
+    tag: webserver-a21e7a01e309722cc1612e7a082db2c79608f869
 dbservice:
   replicaCount: 1
   name: db-service
   image:
     repository: ghcr.io/england2/shellbin
     pullPolicy: IfNotPresent
-    tag: dbservice-REPLACE_ME
-
+    tag: dbservice-a21e7a01e309722cc1612e7a082db2c79608f869
 ncserver:
   replicaCount: 1
   name: ncserver
   image:
     repository: ghcr.io/england2/shellbin
     pullPolicy: IfNotPresent
-    tag: ncserver-REPLACE_ME
+    tag: ncserver-a21e7a01e309722cc1612e7a082db2c79608f869
