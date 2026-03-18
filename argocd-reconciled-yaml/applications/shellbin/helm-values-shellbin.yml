@@ -10,7 +10,7 @@ webserver:
   replicaCount: 1
   name: webserver
   image:
-    repository: ""
+    repository: ghcr.io/england2/shellbin
     pullPolicy: IfNotPresent
     tag: webserver-REPLACE_ME
 
@@ -18,7 +18,7 @@ dbservice:
   replicaCount: 1
   name: db-service
   image:
-    repository: ""
+    repository: ghcr.io/england2/shellbin
     pullPolicy: IfNotPresent
     tag: dbservice-REPLACE_ME
 
@@ -26,6 +26,6 @@ ncserver:
   replicaCount: 1
   name: ncserver
   image:
-    repository: ""
+    repository: ghcr.io/england2/shellbin
     pullPolicy: IfNotPresent
     tag: ncserver-REPLACE_ME
