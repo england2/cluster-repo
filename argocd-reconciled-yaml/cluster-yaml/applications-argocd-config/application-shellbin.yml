@@ -20,6 +20,9 @@ spec:
     - repoURL: git@github.com:england2/cluster-repo.git
       targetRevision: HEAD
       ref: cluster-repo
+    - repoURL: git@github.com:england2/cluster-repo.git
+      targetRevision: HEAD
+      path: argocd-reconciled-yaml/applications/shellbin/manifests
   syncPolicy:
     automated:
       prune: true
