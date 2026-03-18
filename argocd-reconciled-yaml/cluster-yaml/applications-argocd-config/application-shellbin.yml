@@ -10,16 +10,16 @@ spec:
     namespace: shellbin
   sources:
     - repoURL: git@github.com:england2/shellbin.git
-      targetRevision: master
+      targetRevision: HEAD
       # `path: helm` refers to the `helm` folder in england2/shellbin
       path: helm
       helm:
         releaseName: shellbin
         valueFiles:
-          - argocd-reconciled-yaml/cluster-yaml/applications-argocd-config/application-shellbin.yml
+          - $cluster-repo/argocd-reconciled-yaml/cluster-yaml/applications-argocd-config/application-shellbin.yml
     - repoURL: git@github.com:england2/cluster-repo.git
       targetRevision: HEAD
-      ref: values
+      ref: cluster-repo
   syncPolicy:
     automated:
       prune: true
