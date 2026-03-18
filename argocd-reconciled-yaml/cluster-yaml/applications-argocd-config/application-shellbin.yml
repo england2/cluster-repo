@@ -16,7 +16,7 @@ spec:
       helm:
         releaseName: shellbin
         valueFiles:
-          - $cluster-repo/argocd-reconciled-yaml/cluster-yaml/applications-argocd-config/application-shellbin.yml
+          - $cluster-repo/argocd-reconciled-yaml/applications/shellbin/helm-values-shellbin.yml
     - repoURL: git@github.com:england2/cluster-repo.git
       targetRevision: HEAD
       ref: cluster-repo
