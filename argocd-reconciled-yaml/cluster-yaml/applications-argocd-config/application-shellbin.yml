@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: shellbin
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: shellbin
+  sources:
+    - repoURL: git@github.com:england2/shellbin.git
+      targetRevision: main
+      # `path: helm` refers to the `helm` folder in england2/shellbin
+      path: helm
+      helm:
+        releaseName: shellbin
+        valueFiles:
+          - argocd-reconciled-yaml/applications/shellbin/helm-values-shellbin.yml
+    - repoURL: git@github.com:england2/cluster-repo.git
+      targetRevision: HEAD
+      ref: values
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true

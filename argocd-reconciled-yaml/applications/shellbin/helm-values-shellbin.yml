@@ -1,0 +1,31 @@
+# note: this file is changed automatically as part the `shellbin` dev pipeline.
+# see https://github.com/england2/.github/workflows/build-containers.yml
+global:
+  DBADDR: shellbin-mysql.shellbin.svc.cluster.local
+  DBSERVICEADDR: db-service.shellbin.svc.cluster.local
+  registryUrl: ghcr.io/england2/shellbin
+  imagePullSecret: ghcr-secret
+
+webserver:
+  replicaCount: 1
+  name: webserver
+  image:
+    repository: ""
+    pullPolicy: IfNotPresent
+    tag: webserver-REPLACE_ME
+
+dbservice:
+  replicaCount: 1
+  name: db-service
+  image:
+    repository: ""
+    pullPolicy: IfNotPresent
+    tag: dbservice-REPLACE_ME
+
+ncserver:
+  replicaCount: 1
+  name: ncserver
+  image:
+    repository: ""
+    pullPolicy: IfNotPresent
+    tag: ncserver-REPLACE_ME
