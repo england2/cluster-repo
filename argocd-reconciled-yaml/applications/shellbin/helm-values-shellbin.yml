@@ -11,18 +11,18 @@ webserver:
   image:
     repository: ghcr.io/england2/shellbin
     pullPolicy: IfNotPresent
-    tag: webserver-a21e7a01e309722cc1612e7a082db2c79608f869
+    tag: webserver-ecdba9bc6aaafc675d85efbd666b239086bf50d3
 dbservice:
   replicaCount: 1
   name: db-service
   image:
     repository: ghcr.io/england2/shellbin
     pullPolicy: IfNotPresent
-    tag: dbservice-a21e7a01e309722cc1612e7a082db2c79608f869
+    tag: dbservice-ecdba9bc6aaafc675d85efbd666b239086bf50d3
 ncserver:
   replicaCount: 1
   name: ncserver
   image:
     repository: ghcr.io/england2/shellbin
     pullPolicy: IfNotPresent
-    tag: ncserver-a21e7a01e309722cc1612e7a082db2c79608f869
+    tag: ncserver-ecdba9bc6aaafc675d85efbd666b239086bf50d3
