@@ -3,6 +3,7 @@
 global:
   DBADDR: shellbin-mysql.shellbin.svc.cluster.local
   DBSERVICEADDR: db-service.shellbin.svc.cluster.local
+  PUBLIC_SERVER_ADDER: placeholder.net
   registryUrl: ghcr.io/england2/shellbin
   imagePullSecret: ghcr-secret
 webserver:
