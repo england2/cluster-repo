@@ -1,4 +1,4 @@
-# note: this file is changed automatically as part the `shellbin` dev pipeline.
+# note: this file is changed automatically as part of the `shellbin` dev pipeline.
 # see https://github.com/england2/.github/workflows/build-containers.yml
 global:
   DBADDR: shellbin-mysql.shellbin.svc.cluster.local
