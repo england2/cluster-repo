@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: webterm
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: webterm
+  sources:
+    - repoURL: git@github.com:england2/webterm.git
+      targetRevision: HEAD
+      path: helm
+      helm:
+        releaseName: webterm
+    - repoURL: git@github.com:england2/cluster-repo.git
+      targetRevision: HEAD
+      path: argocd-reconciled-yaml/applications/webterm/manifests
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
