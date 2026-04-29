@@ -8,6 +8,13 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: webterm
+  ignoreDifferences:
+    - group: apps
+      kind: StatefulSet
+      name: webterm-terminals
+      namespace: webterm
+      jsonPointers:
+        - /spec/replicas
   sources:
     - repoURL: git@github.com:england2/webterm.git
       targetRevision: HEAD
@@ -23,3 +30,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - RespectIgnoreDifferences=true
